@@ -199,7 +199,7 @@ names to which it refers are bound."
       (tooltip (:foreground ,foreground :background ,background ))
 
       ;; Emacs interface
-      (cursor (:background ,red))
+      (cursor (:background ,foreground))
       (fringe (:background ,low-contrast-bg :foreground ,comment))
       (linum (:background ,low-contrast-bg :foreground ,comment :italic nil :underline nil))
       (line-number (:background ,low-contrast-bg :foreground ,comment))
@@ -822,7 +822,7 @@ names to which it refers are bound."
 
       ;; company
       (company-preview (:foreground ,comment :background ,background))
-      (company-preview-common (:inherit company-preview :foreground ,red))
+      (company-preview-common (:inherit company-preview :foreground ,aqua))
       (company-preview-search (:inherit company-preview :foreground ,blue :inverse-video t))
       (company-tooltip (:inherit tooltip))
       (company-tooltip-selection (:background ,contrast-bg :weight bold))
