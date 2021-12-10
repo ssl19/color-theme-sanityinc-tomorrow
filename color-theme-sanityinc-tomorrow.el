@@ -196,7 +196,7 @@ names to which it refers are bound."
       (success (:foreground ,green))
       (error (:foreground ,red))
       (warning (:foreground ,orange))
-      (tooltip (:foreground ,yellow :background ,background :inverse-video t))
+      (tooltip (:foreground ,foreground :background ,background ))
 
       ;; Emacs interface
       (cursor (:background ,red))
@@ -824,7 +824,7 @@ names to which it refers are bound."
       (company-preview (:foreground ,comment :background ,background))
       (company-preview-common (:inherit company-preview :foreground ,red))
       (company-preview-search (:inherit company-preview :foreground ,blue :inverse-video t))
-      (company-tooltip (:background ,background))
+      (company-tooltip (:inherit tooltip))
       (company-tooltip-selection (:background ,contrast-bg :weight bold))
       (company-tooltip-common (:inherit company-tooltip :foreground ,blue))
       (company-tooltip-common-selection (:inherit company-tooltip-selection :foreground ,blue))
