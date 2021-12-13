@@ -822,7 +822,7 @@ names to which it refers are bound."
 
       ;; company
       (company-preview (:foreground ,comment :background ,background))
-      (company-preview-common (:inherit company-preview :foreground ,aqua))
+      (company-preview-common (:inherit company-preview :foreground ,red))
       (company-preview-search (:inherit company-preview :foreground ,blue :inverse-video t))
       (company-tooltip (:inherit tooltip))
       (company-tooltip-selection (:background ,contrast-bg :weight bold))
