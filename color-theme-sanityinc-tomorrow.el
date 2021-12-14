@@ -199,7 +199,7 @@ names to which it refers are bound."
       (tooltip (:foreground ,foreground :background ,background ))
 
       ;; Emacs interface
-      (cursor (:background ,foreground))
+      (cursor (:background ,red))
       (fringe (:background ,low-contrast-bg :foreground ,comment))
       (linum (:background ,low-contrast-bg :foreground ,comment :italic nil :underline nil))
       (line-number (:background ,low-contrast-bg :foreground ,comment))
