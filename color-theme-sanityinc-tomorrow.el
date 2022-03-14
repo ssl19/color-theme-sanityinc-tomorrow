@@ -211,12 +211,13 @@ names to which it refers are bound."
       (border (:background ,contrast-bg :foreground ,highlight))
       (highlight (:inverse-video nil :background ,highlight))
       (mode-line (:foreground ,foreground :background ,contrast-bg :weight normal
-                              :box (:line-width 1 :color ,contrast-bg)))
-      (mode-line-buffer-id (:foreground ,purple :background nil))
+                              :box (:line-width 3 :color ,contrast-bg)))
+      (mode-line-buffer-id (:inherit bold :foreground ,purple :background nil))
       (mode-line-inactive (:inherit mode-line
                                     :foreground ,comment
                                     :background ,highlight
-                                    :weight normal))
+                                    :weight normal
+                                    :box (:line-width 3 :color ,highlight)))
       (mode-line-emphasis (:foreground ,foreground :slant italic))
       (mode-line-highlight (:foreground ,purple :box nil :weight bold))
       (minibuffer-prompt (:foreground ,blue))
@@ -586,6 +587,8 @@ names to which it refers are bound."
       (outline-minor-1 (:inherit (outline-minor-0 outline-1)))
 
       ;; Parenthesis matching (built-in)
+      ;; (show-paren-match (:inherit bold :background ,highlight :foreground ,green :underline t))
+      ;; (show-paren-mismatch (:background ,red :foreground ,foreground))
       (show-paren-match (:background ,purple :foreground ,background))
       (show-paren-mismatch (:background ,red :foreground ,background))
 
