@@ -53,6 +53,28 @@
 (eval-when-compile (require 'ansi-color))
 (declare-function color-theme-install "color-theme")
 
+(defcustom sanityinc-tomorrow-keyword-italic nil
+  "Enable italics for keywords."
+  :type 'boolean
+  :group 'sanityinc-tomorrow)
+
+(defcustom sanityinc-tomorrow-comment-italic nil
+  "Enable italics for comments."
+  :type 'boolean
+  :group 'sanityinc-tomorrow)
+
+(defcustom sanityinc-tomorrow-mode-line-padding nil
+  "If non-nil, adds a 3px padding to the mode-line. Can be an integer to
+determine the exact padding."
+  :type '(choice integer boolean))
+
+(defun sanityinc-tomorrow--mode-line-padding ()
+  "Return mode-line box padding."
+  (when sanityinc-tomorrow-mode-line-padding
+    (if (integerp sanityinc-tomorrow-mode-line-padding)
+        sanityinc-tomorrow-mode-line-padding
+      3)))
+
 (defun sanityinc-tomorrow--interpolate (hex1 hex2 gradations which)
   (let ((c1 (color-name-to-rgb hex1))
         (c2 (color-name-to-rgb hex2)))
@@ -177,12 +199,12 @@ names to which it refers are bound."
       (italic (:slant italic))
       (font-lock-builtin-face (:foreground ,purple))
       (font-lock-comment-delimiter-face (:foreground ,comment :slant italic))
-      (font-lock-comment-face (:foreground ,comment :slant italic))
+      (font-lock-comment-face (:foreground ,comment :slant ,(if sanityinc-tomorrow-comment-italic 'italic 'normal)))
       (font-lock-constant-face (:foreground ,blue))
       (font-lock-doc-face (:foreground ,purple))
       (font-lock-doc-string-face (:foreground ,yellow))
       (font-lock-function-name-face (:foreground ,orange))
-      (font-lock-keyword-face (:foreground ,green))
+      (font-lock-keyword-face (:foreground ,green :slant ,(if sanityinc-tomorrow-keyword-italic 'italic 'normal)))
       (font-lock-negation-char-face (:foreground ,blue))
       (font-lock-preprocessor-face (:foreground ,purple))
       (font-lock-regexp-grouping-backslash (:foreground ,yellow))
@@ -211,13 +233,17 @@ names to which it refers are bound."
       (border (:background ,contrast-bg :foreground ,highlight))
       (highlight (:inverse-video nil :background ,highlight))
       (mode-line (:foreground ,foreground :background ,contrast-bg :weight normal
-                              :box (:line-width 3 :color ,contrast-bg)))
+                              :box ,(when sanityinc-tomorrow-mode-line-padding
+                                      `(:line-width ,(sanityinc-tomorrow--mode-line-padding)
+                                        :color ,contrast-bg))))
       (mode-line-buffer-id (:inherit bold :foreground ,purple :background nil))
       (mode-line-inactive (:inherit mode-line
                                     :foreground ,comment
                                     :background ,highlight
                                     :weight normal
-                                    :box (:line-width 3 :color ,highlight)))
+                                    :box ,(when sanityinc-tomorrow-mode-line-padding
+                                      `(:line-width ,(sanityinc-tomorrow--mode-line-padding)
+                                        :color ,highlight))))
       (mode-line-emphasis (:foreground ,foreground :slant italic))
       (mode-line-highlight (:foreground ,purple :box nil :weight bold))
       (minibuffer-prompt (:foreground ,blue))
