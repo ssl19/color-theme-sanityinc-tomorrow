@@ -236,7 +236,7 @@ names to which it refers are bound."
                               :box ,(when sanityinc-tomorrow-mode-line-padding
                                       `(:line-width ,(sanityinc-tomorrow--mode-line-padding)
                                         :color ,contrast-bg))))
-      (mode-line-buffer-id (:inherit bold :foreground ,purple :background nil))
+      (mode-line-buffer-id (:weight bold :foreground ,purple :background nil))
       (mode-line-inactive (:inherit mode-line
                                     :foreground ,comment
                                     :background ,highlight
@@ -336,6 +336,8 @@ names to which it refers are bound."
       (ediff-odd-diff-B (:foreground ,orange :background ,contrast-bg :extend t))
       (ediff-odd-diff-C (:foreground ,orange :background ,contrast-bg :extend t))
 
+      ;; Eglot
+      (eglot-highlight-symbol-face (:weight bold :background ,contrast-bg))
       ;; ElDoc (built-in)
       (eldoc-highlight-function-argument (:foreground ,green :weight bold))
 
@@ -1505,6 +1507,8 @@ names to which it refers are bound."
       (syslog-su (:weight bold :foreground ,purple))
       (syslog-warn (:weight bold :foreground ,orange))
 
+      ;; thing-edit
+      (thing-edit-font-lock-flash (:foreground ,foreground :background ,yellow))
       ;; transient
       (transient-enabled-suffix (:foreground ,low-contrast-bg :background ,green :weight bold))
       (transient-disabled-suffix (:foreground ,foreground :background ,red :weight bold))
