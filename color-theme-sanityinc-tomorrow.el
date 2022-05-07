@@ -298,6 +298,7 @@ names to which it refers are bound."
       (completions-annotations (:foreground ,comment :slant italic))
       (completions-common-part (:foreground ,blue))
       (completions-first-difference (:foreground ,orange :weight bold))
+      (completions-highlight (:inherit highlight :inverse-video t))
 
       ;; custom (built-in)
       (custom-variable-tag (:foreground ,blue))
@@ -851,6 +852,10 @@ names to which it refers are bound."
       (coffee-mode-class-name (:foreground ,orange :weight bold))
       (coffee-mode-function-param (:foreground ,purple))
 
+      ;; corfu
+
+      (corfu-current (:background ,contrast-bg :weight bold))
+      (corfu-default (:inherit tooltip))
       ;; company
       (company-preview (:foreground ,comment :background ,background))
       (company-preview-common (:inherit company-preview :foreground ,red))
