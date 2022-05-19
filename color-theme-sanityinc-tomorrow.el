@@ -865,8 +865,8 @@ names to which it refers are bound."
       (company-tooltip-common (:inherit company-tooltip :foreground ,blue))
       (company-tooltip-common-selection (:inherit company-tooltip-selection :foreground ,blue))
       (company-tooltip-search (:inherit company-tooltip :foreground ,blue :inverse-video t))
-      (company-tooltip-annotation (:inherit company-tooltip :foreground ,green))
-      (company-tooltip-annotation-selection (:inherit company-tooltip-selection :foreground ,green))
+      (company-tooltip-annotation (:inherit company-tooltip :foreground ,orange))
+      (company-tooltip-annotation-selection (:inherit company-tooltip-selection :foreground ,orange))
       (company-scrollbar-bg (:inherit 'company-tooltip :background ,highlight))
       (company-scrollbar-fg (:background ,contrast-bg))
       (company-echo-common (:inherit company-echo :foreground ,red))
@@ -974,6 +974,8 @@ names to which it refers are bound."
       (e2wm:face-history-list-select1 (:foreground ,aqua :background ,background))
       (e2wm:face-history-list-select2 (:foreground ,yellow :background ,background))
 
+      ;; easy-kill
+      (easy-kill-selection (:foreground ,foreground :background ,(sanityinc-tomorrow--interpolate yellow background 10 5)))
       ;; EDTS errors
       (edts-face-warning-line (:background nil :inherit flymake-warnline))
       (edts-face-warning-mode-line (:background nil :foreground ,orange :weight bold))
