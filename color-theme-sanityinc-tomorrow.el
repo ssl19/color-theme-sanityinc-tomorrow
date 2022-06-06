@@ -247,7 +247,7 @@ names to which it refers are bound."
       (mode-line-emphasis (:foreground ,foreground :slant italic))
       (mode-line-highlight (:foreground ,purple :box nil :weight bold))
       (minibuffer-prompt (:foreground ,blue))
-      (region (:background ,contrast-bg :inverse-video nil :extend t))
+      (region (:background ,(sanityinc-tomorrow--interpolate blue background 10 7) :inverse-video nil :extend t))
       (secondary-selection (:background ,highlight :extend t))
 
       (header-line (:inherit mode-line-inactive :foreground ,aqua :background nil))
