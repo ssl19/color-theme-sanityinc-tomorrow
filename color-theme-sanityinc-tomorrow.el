@@ -852,10 +852,6 @@ names to which it refers are bound."
       (coffee-mode-class-name (:foreground ,orange :weight bold))
       (coffee-mode-function-param (:foreground ,purple))
 
-      ;; corfu
-
-      (corfu-current (:background ,contrast-bg :weight bold))
-      (corfu-default (:inherit ,low-contrast-bg))
       ;; company
       (company-preview (:foreground ,comment :background ,background))
       (company-preview-common (:inherit company-preview :foreground ,red))
